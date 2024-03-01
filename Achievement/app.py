@@ -1,6 +1,5 @@
 # AchievementRank
 import json
-from jsonsearch import JsonSearch
 import requests
 
 mergedData = []
