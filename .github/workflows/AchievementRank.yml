@@ -17,7 +17,7 @@ on:
 
 jobs:
   achievement-rank:
-    runs-on: windows-latest
+    runs-on: ububtu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
