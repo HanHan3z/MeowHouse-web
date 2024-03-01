@@ -5,7 +5,7 @@ import requests
 uidTable = []
 mergedData = []
 
-r = open('Achievement/uidList.txt', encoding = 'utf-8')
+r = open('Achievement/uidList.txt', encoding = 'GB2312')
 line = r.readline()
 while line:
     uidData = eval(line)
@@ -19,9 +19,7 @@ for i in uidTable:
     
     url = 'https://api.mihomo.me/sr_info_parsed/' + str(i)
     response = requests.get(url)
-    response = json.loads(response.content, encoding = 'utf-8')
-
-    print('response:', response)
+    response = json.loads(response.content, encoding = 'GB2312')
     
     uid = str(response['player']['uid'])
     nickname = str(response['player']['nickname'])
@@ -43,6 +41,6 @@ for i in uidTable:
 
 mergedData = json.dumps(mergedData, ensure_ascii = False)
 
-file = open('AchievementRank.js', 'w', encoding = 'utf-8')
+file = open('AchievementRank.js', 'w', encoding = 'GB2312')
 file.write(mergedData)
 file.close()
