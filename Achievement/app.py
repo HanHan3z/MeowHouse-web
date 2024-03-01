@@ -4,7 +4,7 @@ import requests
 
 mergedData = []
 
-for line in open('uidList.txt'):
+for line in open('Achievement/uidList.txt'):
     
     url = 'https://api.mihomo.me/sr_info_parsed/' + str(line)
     response = requests.get(url)
