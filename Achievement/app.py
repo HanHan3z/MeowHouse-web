@@ -14,8 +14,6 @@ while line:
 r.close()
 
 for i in uidTable:
-
-    print(i)
     
     url = 'https://api.mihomo.me/sr_info_parsed/' + str(i)
     response = requests.get(url)
@@ -36,8 +34,6 @@ for i in uidTable:
     }
     
     mergedData.append(data)
-
-    print('UID:', i, 'added!')
 
 mergedData = json.dumps(mergedData, ensure_ascii = False)
 
