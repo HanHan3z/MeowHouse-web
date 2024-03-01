@@ -3,12 +3,6 @@ name: achievement-rank
 on: 
   schedule:
     - cron: '0/15 * * * *'
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
 
 jobs:
   achievement-rank:
@@ -30,7 +24,6 @@ jobs:
       run: |
           git config --global user.name 'HanHan3z'
           git config --global user.email '1635233241@qq.com'
-          git rm --cached AchievementRank.json
           git add -f AchievementRank.json
           git commit -m "Update Achievement Leaderboard"
     - name: Push Changes
