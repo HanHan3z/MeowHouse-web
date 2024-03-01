@@ -6,7 +6,7 @@ import requests
 uidTable = []
 mergedData = []
 
-r = open('Achievement/uidList.txt', encoding = 'GB2312')
+r = open('Achievement/uidList.txt')
 line = r.readline()
 while line:
     uidData = eval(line)
@@ -39,6 +39,6 @@ for i in uidTable:
 
 mergedData = json.dumps(mergedData, ensure_ascii = False)
 
-file = open('AchievementRank.json', 'w', encoding = 'GB2312')
+file = open('AchievementRank.json', 'w', encoding = 'utf-8')
 file.write(mergedData)
 file.close()
