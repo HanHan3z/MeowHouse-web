@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip3 install -r requirements.txt
+        pip3 install -r Achievement/requirements.txt
     - name: Update Ranking Leaderboard
       run: |
-        python3 app.py
+        python3 Achievement/app.py
