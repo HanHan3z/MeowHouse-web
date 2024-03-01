@@ -30,8 +30,8 @@ jobs:
       run: |
           git config --global user.name 'HanHan3z'
           git config --global user.email '1635233241@qq.com'
-          git rm -cached .
-          git add -f .
+          git rm --cached AchievementRank.json
+          git add -f AchievementRank.json
           git commit -m "Update Achievement Leaderboard"
     - name: Push Changes
       uses: ad-m/github-push-action@master
