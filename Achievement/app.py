@@ -37,6 +37,6 @@ for i in uidTable:
 
 mergedData = json.dumps(mergedData, ensure_ascii = False)
 
-file = open('AchievementRank.js', 'w', encoding = 'GB2312')
+file = open('AchievementRank.json', 'w', encoding = 'GB2312')
 file.write(mergedData)
 file.close()
