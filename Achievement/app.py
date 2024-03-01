@@ -31,4 +31,4 @@ mergedData = json.dumps(mergedData, ensure_ascii = False)
 
 file = open('AchievementRank.js', 'w', encoding = 'utf-8')
 file.write(mergedData)
-file.close
+file.close()
