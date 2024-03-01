@@ -1,5 +1,6 @@
 # AchievementRank
 import json
+import time
 import requests
 
 uidTable = []
@@ -30,7 +31,8 @@ for i in uidTable:
         'nickname': nickname,
         'level': level,
         'signature': signature,
-        'achievementCount': achievementCount
+        'achievementCount': achievementCount,
+        'ticks': time.times()
     }
     
     mergedData.append(data)
