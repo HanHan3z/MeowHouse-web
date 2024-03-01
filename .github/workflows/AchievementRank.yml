@@ -2,7 +2,7 @@ name: achievement-rank
 
 on: 
   schedule:
-    - cron: '0/15 * * * *'
+    - cron: '0/30 * * * *'
 
 jobs:
   achievement-rank:
