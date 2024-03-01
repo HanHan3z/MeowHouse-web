@@ -9,6 +9,8 @@ for line in open('Achievement/uidList.txt'):
     url = 'https://api.mihomo.me/sr_info_parsed/' + str(line)
     response = requests.get(url)
     response = json.loads(response.content)
+
+    print('response:', response)
     
     uid = str(response['player']['uid'])
     nickname = str(response['player']['nickname'])
