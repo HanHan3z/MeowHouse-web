@@ -5,7 +5,7 @@ import requests
 uidTable = []
 mergedData = []
 
-r = open("Achievement/uidList.txt", "r", encoding = 'utf-8')
+r = open("Achievement/uidList.txt", "r")
 line = r.readline()
 while line:
     uidData = eval(line)
@@ -16,6 +16,7 @@ r.close()
 for i in uidTable:
 
     print(i)
+    
     url = 'https://api.mihomo.me/sr_info_parsed/' + str(i)
     response = requests.get(url)
     response = json.loads(response.content)
@@ -37,6 +38,8 @@ for i in uidTable:
     }
     
     mergedData.append(data)
+
+    print('UID:', i, 'added!')
 
 mergedData = json.dumps(mergedData, ensure_ascii = False)
 
