@@ -32,7 +32,7 @@ for i in uidTable:
         'level': level,
         'signature': signature,
         'achievementCount': achievementCount,
-        'ticks': time.times()
+        'ticks': time.time()
     }
     
     mergedData.append(data)
