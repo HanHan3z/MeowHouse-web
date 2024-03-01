@@ -17,7 +17,7 @@ for i in uidTable:
     
     url = 'https://api.mihomo.me/sr_info_parsed/' + str(i)
     response = requests.get(url)
-    response = json.loads(response.content, encoding = 'GB2312')
+    response = json.loads(response.content)
     
     uid = str(response['player']['uid'])
     nickname = str(response['player']['nickname'])
