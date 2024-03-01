@@ -20,3 +20,13 @@ jobs:
     - name: Update Ranking Leaderboard
       run: |
         python3 Achievement/app.py
+    - name: Commit Changes
+      run: |
+          git config --global user.name 'HanHan3z'
+          git config --global user.email '1635233241@qq.com'
+          git add Achievement/.
+          git commit -m "Update Achievement Leaderboard" -a
+    - name: Push Changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACCESS_TOKEN }}
