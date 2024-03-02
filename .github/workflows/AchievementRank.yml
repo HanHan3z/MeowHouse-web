@@ -3,6 +3,17 @@ name: achievement-rank
 on: 
   schedule:
     - cron: '0/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
 
 jobs:
   achievement-rank:
