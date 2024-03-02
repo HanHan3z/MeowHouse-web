@@ -43,7 +43,7 @@ for i in uidTable:
 mergedData = sorted(mergedData, key = lambda j: j['nickname'])
 mergedData = sorted(mergedData, key = lambda j: j['achievementCount'], reverse = True)
 
-mergedData = json.dumps(mergedData, ensure_ascii = False)
+mergedData = '{"achievementData":' + str(json.dumps(mergedData, ensure_ascii = False)) + '}'
 
 jsonData = jsonsearch.JsonSearch(object = mergedData, mode = 's')
 
