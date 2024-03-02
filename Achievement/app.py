@@ -37,6 +37,9 @@ for i in uidTable:
     
     mergedData.append(data)
 
+mergedData = sorted(mergedData, key = lambda j: j['nickname'])
+mergedData = sorted(mergedData, key = lambda j: j['achievementCount'], reverse = True)
+
 mergedData = json.dumps(mergedData, ensure_ascii = False)
 
 file = open('AchievementRank.json', 'w', encoding = 'utf-8')
