@@ -57,7 +57,7 @@ htmlText = '<table><thead><tr><th class="rank">排名</th><th class="uid">UID</t
 
 for j in range(0, len(achievementCountArr)):
     tempRank = j + 1
-    tempText = '<tr><td class="rank">' + str(tempRank) + '</td><td class="uid">'+ str(uidArr[j]) +'</td><td class="nickname">'+ str(nicknameArr[j]) +'</td><td class="level">'+ str(levelArr[j]) +'</td><td class="sign">'+ str(signatureArr[j]) +'</td><td class=""achievementCount>'+ str(achievementCountArr[j]) +'</td></tr>'
+    tempText = '<tr><td class="rank">' + str(tempRank) + '</td><td class="uid">'+ str(uidArr[j]) +'</td><td class="nickname">'+ str(nicknameArr[j]) +'</td><td class="level">'+ str(levelArr[j]) +'</td><td class="sign">'+ str(signatureArr[j]) +'</td><td class="achievementCount">'+ str(achievementCountArr[j]) +'</td></tr>'
     htmlText = htmlText + tempText
     
 htmlText = htmlText + '</tbody></table>'
