@@ -19,7 +19,6 @@ for i in uidTable:
     url = 'https://api.mihomo.me/sr_info_parsed/' + str(i)
     response = requests.get(url)
     response = json.loads(response.content)
-    print('Loading:', i)
     
     uid = response['player']['uid']
     nickname = response['player']['nickname']
@@ -37,7 +36,8 @@ for i in uidTable:
     }
     
     mergedData.append(data)
-    print('Loading:', i, 'Completed.')
+
+    time.sleep(3)
 
 mergedData = sorted(mergedData, key = lambda j: j['nickname'])
 mergedData = sorted(mergedData, key = lambda j: j['achievementCount'], reverse = True)
