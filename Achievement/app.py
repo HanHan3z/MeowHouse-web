@@ -20,11 +20,11 @@ for i in uidTable:
     response = requests.get(url)
     response = json.loads(response.content)
     
-    uid = str(response['player']['uid'])
-    nickname = str(response['player']['nickname'])
-    level = str(response['player']['level'])
-    signature = str(response['player']['signature'])
-    achievementCount = str(response['player']['space_info']['achievement_count'])
+    uid = response['player']['uid']
+    nickname = response['player']['nickname']
+    level = response['player']['level']
+    signature = response['player']['signature']
+    achievementCount = response['player']['space_info']['achievement_count']
     
     data = {
         'uid': uid,
