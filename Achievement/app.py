@@ -1,8 +1,9 @@
 # AchievementRank
 import json
 import jsonsearch
-import time
+import pandas
 import requests
+import time
 
 uidTable = []
 mergedData = []
@@ -55,9 +56,17 @@ achievementCountArr = jsonData.search_all_value(key = 'achievementCount')
 
 htmlText = '<table><thead><tr><th class="rank">排名</th><th class="uid">UID</th><th class="nickname">昵称</th><th class="level">开拓等级</th><th class="sign">签名</th><th class="achievementCount">成就数</th></thead><tbody>'
 
+df = pandas.DataFrame(achievementCountArr)
+df = df.rank(method = 'min')
+dfArr = df.values
+rankArr = dfArr.tolist()
+
 for j in range(0, len(achievementCountArr)):
-    tempRank = j + 1
-    tempText = '<tr><td class="rank">' + str(tempRank) + '</td><td class="uid">'+ str(uidArr[j]) +'</td><td class="nickname">'+ str(nicknameArr[j]) +'</td><td class="level">'+ str(levelArr[j]) +'</td><td class="sign">'+ str(signatureArr[j]) +'</td><td class="achievementCount">'+ str(achievementCountArr[j]) +'</td></tr>'
+    tempElement = str(pdList[j]).replace("[", "").replace("]", "").replace(".0", "")
+    pdList[j] = tempElement
+
+for k in range(0, len(achievementCountArr)):
+    tempText = '<tr><td class="rank">' + str(rankArr[k]) + '</td><td class="uid">'+ str(uidArr[k]) +'</td><td class="nickname">'+ str(nicknameArr[k]) +'</td><td class="level">'+ str(levelArr[k]) +'</td><td class="sign">'+ str(signatureArr[k]) +'</td><td class="achievementCount">'+ str(achievementCountArr[k]) +'</td></tr>'
     htmlText = htmlText + tempText
     
 htmlText = htmlText + '</tbody></table>'
