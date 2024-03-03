@@ -56,15 +56,13 @@ achievementCountArr = jsonData.search_all_value(key = 'achievementCount')
 htmlText = '<p style:"display: none;">更新时间戳:' + str(time.time()) + '</p><table><thead><tr><th class="rank">排名</th><th class="uid">UID</th><th class="nickname">昵称</th><th class="level">开拓等级</th><th class="sign">签名</th><th class="achievementCount">成就数</th></thead><tbody>'
 
 df = pandas.DataFrame(achievementCountArr)
-df = df.rank(method = 'min')
+df = df.rank(method = 'min', ascending = False)
 dfArr = df.values
 rankArr = dfArr.tolist()
 
 for j in range(0, len(achievementCountArr)):
     tempElement = str(rankArr[j]).replace("[", "").replace("]", "").replace(".0", "")
     rankArr[j] = tempElement
-
-rankArr = rankArr.reverse()
 
 for k in range(0, len(achievementCountArr)):
     tempText = '<tr><td class="rank">' + str(rankArr[k]) + '</td><td class="uid">'+ str(uidArr[k]) +'</td><td class="nickname">'+ str(nicknameArr[k]) +'</td><td class="level">'+ str(levelArr[k]) +'</td><td class="sign">'+ str(signatureArr[k]) +'</td><td class="achievementCount">'+ str(achievementCountArr[k]) +'</td></tr>'
