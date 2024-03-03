@@ -33,8 +33,7 @@ for i in uidTable:
         'nickname': nickname,
         'level': level,
         'signature': signature,
-        'achievementCount': achievementCount,
-        'ticks': time.time()
+        'achievementCount': achievementCount
     }
     
     mergedData.append(data)
@@ -54,7 +53,7 @@ levelArr = jsonData.search_all_value(key = 'level')
 signatureArr = jsonData.search_all_value(key = 'signature')
 achievementCountArr = jsonData.search_all_value(key = 'achievementCount')
 
-htmlText = '<table><thead><tr><th class="rank">排名</th><th class="uid">UID</th><th class="nickname">昵称</th><th class="level">开拓等级</th><th class="sign">签名</th><th class="achievementCount">成就数</th></thead><tbody>'
+htmlText = '<p style:"display: none;">更新时间戳:' + time.time() + '</p><table><thead><tr><th class="rank">排名</th><th class="uid">UID</th><th class="nickname">昵称</th><th class="level">开拓等级</th><th class="sign">签名</th><th class="achievementCount">成就数</th></thead><tbody>'
 
 df = pandas.DataFrame(achievementCountArr)
 df = df.rank(method = 'min')
