@@ -62,7 +62,7 @@ rankArr = dfArr.tolist()
 
 for j in range(0, len(achievementCountArr)):
     tempElement = str(rankArr[j]).replace("[", "").replace("]", "").replace(".0", "")
-    pdList[j] = tempElement
+    rankArr[j] = tempElement
 
 for k in range(0, len(achievementCountArr)):
     tempText = '<tr><td class="rank">' + str(rankArr[k]) + '</td><td class="uid">'+ str(uidArr[k]) +'</td><td class="nickname">'+ str(nicknameArr[k]) +'</td><td class="level">'+ str(levelArr[k]) +'</td><td class="sign">'+ str(signatureArr[k]) +'</td><td class="achievementCount">'+ str(achievementCountArr[k]) +'</td></tr>'
