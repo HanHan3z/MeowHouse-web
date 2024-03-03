@@ -61,7 +61,7 @@ dfArr = df.values
 rankArr = dfArr.tolist()
 
 for j in range(0, len(achievementCountArr)):
-    tempElement = str(pdList[j]).replace("[", "").replace("]", "").replace(".0", "")
+    tempElement = str(rankArr[j]).replace("[", "").replace("]", "").replace(".0", "")
     pdList[j] = tempElement
 
 for k in range(0, len(achievementCountArr)):
