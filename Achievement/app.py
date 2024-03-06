@@ -38,7 +38,7 @@ for i in uidTable:
     
     mergedData.append(data)
 
-    time.sleep(3)
+    time.sleep(5)
 
 mergedData = sorted(mergedData, key = lambda j: j['nickname'])
 mergedData = sorted(mergedData, key = lambda j: j['achievementCount'], reverse = True)
